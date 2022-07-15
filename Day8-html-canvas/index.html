@@ -15,7 +15,7 @@
   canvas.width=window.innerWidth;
   ctx.lineJoin='round';
   ctx.lineCap='round';
-  ctx.strokeStyle='#BADASS';
+  ctx.strokeStyle='#BADA55';
 
   let isDrawing = false;
   let lastX =0;
@@ -29,7 +29,7 @@
       ctx.lineTo(e.offsetX,e.offsetY);
       ctx.stroke();
       [lastX,lastY]=[e.offsetX,e.offsetY];
-  }
+ }
 
   canvas.addEventListener('mousedown', (e)=> {
     isDrawing=true;
