@@ -16,11 +16,13 @@
   ctx.lineJoin='round';
   ctx.lineCap='round';
   ctx.strokeStyle='#BADA55';
+  ctx.lineWidth= 100;
 
   let isDrawing = false;
   let lastX =0;
   let lastY = 0;
   let hue=0;
+  let direction=true;
 
   function draw(e){
     if(!isDrawing) return;
@@ -32,6 +34,14 @@
       ctx.stroke();
       [lastX,lastY]=[e.offsetX,e.offsetY];
       hue++;
+      if (ctx.lineWidth>=100||ctx.lineWidth<=1){
+        direction=!direction;
+      }
+      if(direction){
+        ctx.lineWidth++;
+      }else{
+        ctx.lineWidth--;
+      }
  }
 
   canvas.addEventListener('mousedown', (e)=> {
